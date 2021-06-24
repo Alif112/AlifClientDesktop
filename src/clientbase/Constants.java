@@ -56,7 +56,7 @@ import clientbase.udp.XTACACSImplementation;
  * @author User
  */
 public class Constants {
-    public static String filename="udpClientSetup.txt";
+    public static String filename="clientSetup.txt";
     
     public static String protocolType="protocolType";
     public static String protocolNumber="protocolNumber";

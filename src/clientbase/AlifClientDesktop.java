@@ -16,7 +16,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-public class ClientBase {
+public class AlifClientDesktop {
 
     static int totalSend=0;
     static int totalReceive=0;
