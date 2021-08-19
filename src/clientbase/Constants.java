@@ -27,6 +27,7 @@ import clientbase.udp.DSPv2Implementation;
 import clientbase.udp.DropboxImplementation;
 import clientbase.udp.EDonkeyImplementation;
 import clientbase.udp.ICMPv6Implementation;
+import clientbase.udp.IPv4withGPRSImplementation;
 import clientbase.udp.IPv6Implementation;
 import clientbase.udp.ISAKMPImplementation;
 import clientbase.udp.L2TPImplementation;
@@ -39,9 +40,11 @@ import clientbase.udp.MOUNTImplementation;
 import clientbase.udp.NFSImplementation;
 import clientbase.udp.NTPImplementation;
 import clientbase.udp.RDTImplementation;
+import clientbase.udp.SNDCPImplementation;
 import clientbase.udp.SNMPImplementation;
 import clientbase.udp.STATImplementation;
 import clientbase.udp.Slimp3Implementation;
+import clientbase.udp.TCPWithGPRSImplementation;
 import clientbase.udp.TEPv1Implementation;
 import clientbase.udp.TFTP2Implementation;
 import clientbase.udp.UAUDPImplementation;
@@ -83,7 +86,8 @@ public class Constants {
                                             "DPPv2", "CoAP",  "TFTP", "IPv6", "LTPSegment",
                                             "XTACACS", "ISAKMP","BVLC", "MMSE","Slimp3",
                                             "AutoRP", "MIOP","eDonkey", "UAUDP","Dropbox",
-                                            "RDT", "MACTelnet","DCP-PFT","WireGuard", "DNP"
+                                            "RDT", "MACTelnet","DCP-PFT","WireGuard", "DNP",
+                                            "TCPWithGPRS","SNDCP","IPv4WithGPRS"
                                               };
     
     
@@ -125,6 +129,9 @@ public class Constants {
     public static DCP_PFTImplementation dcp_pft=new DCP_PFTImplementation();
     public static WireGuardImplementation wireGuard=new WireGuardImplementation();
     public static DNPImplementation dnp=new DNPImplementation();
+    public static TCPWithGPRSImplementation tcpWithGprs=new TCPWithGPRSImplementation();
+    public static SNDCPImplementation sndcp=new SNDCPImplementation();
+    public static IPv4withGPRSImplementation ipv4WithGprs=new IPv4withGPRSImplementation();
     
     
     public static final int UDP100=1000;
@@ -163,7 +170,9 @@ public class Constants {
     public static final int DCP_PFT=1033;
     public static final int WIREGUARD=1034;
     public static final int DNP=1035;
-    
+    public static final int TCP_WITH_GPRS=1036;
+    public static final int SNDCP=1037;
+    public static final int IPv4_WITH_GPRS=1038;
     
     public static String[] protocolNameListTCP={"TCP 100","NineP2000","COPS","EXEC","BasicTcp","IMAP",
                                             "SMTP","IPA","CQL","BGP"

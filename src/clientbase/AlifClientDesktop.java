@@ -126,8 +126,8 @@ public class AlifClientDesktop {
                     if(sequenceNumber==256) sequenceNumber=0;
                     newdata[sendDataLen]=(byte) sequenceNumber++;
                     String m1=Utility.bytesToHex(newdata,offset,sendDataLen+1);
-//                    System.out.println("--------------> "+(sendDataLen+1));
-//                    System.out.println(m1);
+                    System.out.println("--------------> "+(sendDataLen));
+                    System.out.println(m1);
 
 
                     switch(ConfigCreator.protocolNumber){
@@ -235,12 +235,25 @@ public class AlifClientDesktop {
                             break;
                         case Constants.WIREGUARD:
                             len2=Constants.wireGuard.createPacket(newdata, offset, sendDataLen+1);
+                            break;
                         case Constants.DNP: 
                             len2=Constants.dnp.createPacket(newdata, offset, sendDataLen+1, ds.getPort(), ConfigCreator.serverSocketPort);
+                            break;
+                        case Constants.TCP_WITH_GPRS:
+                            len2=Constants.tcpWithGprs.createPacket(newdata, offset, sendDataLen+1);
+                            break;
+                        case Constants.SNDCP:
+                            len2=Constants.sndcp.createPacket(newdata, offset, sendDataLen+1);
+                            break;
+                        case Constants.IPv4_WITH_GPRS:
+                            len2=Constants.ipv4WithGprs.createPacket(newdata, offset, sendDataLen+1);
+                            break;
+                            
                     }
                     
+                    
                     String m=Utility.bytesToHex(newdata,offset,len2);
-//                    System.out.println("sending len ================================>          "+ len2);
+//                    System.out.println(sendDataLen+"sending len ================================>          "+ len2);
 //                    System.out.println(m);
                   
                     byte[] b1=Utility.hexStringToByteArray(m);
@@ -398,16 +411,26 @@ public class AlifClientDesktop {
                             break;
                         case Constants.WIREGUARD:
                             len2=Constants.wireGuard.decodePacket(b1, offset, dp1.getLength());
+                            break;
                         case Constants.DNP:
                             len2=Constants.dnp.decodePacket(b1, offset, dp1.getLength());
-                                
+                            break;
+                        case Constants.TCP_WITH_GPRS:
+                            len2=Constants.tcpWithGprs.decodePacket(b1, offset, dp1.getLength());
+                            break;
+                        case Constants.SNDCP:
+                            len2=Constants.sndcp.decodePacket(b1, offset, dp1.getLength());
+                            break;
+                        case Constants.IPv4_WITH_GPRS:
+                            len2=Constants.ipv4WithGprs.decodePacket(b1, offset, dp1.getLength());
+                            break;
                             
                     }
                     
                     
-//                    System.out.println("=======================> "+len2);
-//                    String ack=Utility.bytesToHex(b1, 0, len2);                   
-//                    System.out.println(ack);
+                    System.out.println("=======================> "+len2);
+                    String ack=Utility.bytesToHex(b1, 0, len2);                   
+                    System.out.println(ack);
 //                    
                     
 //                    System.out.println("--------received-----");
