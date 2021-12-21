@@ -3,6 +3,9 @@ package clientbase.udp;
 import clientbase.util.Functions;
 import clientbase.util.Utility;
 
+/**
+ * @author alif
+ */
 public class IPv6Implementation {
     public short orginUdpPort;
     public int originAddress;

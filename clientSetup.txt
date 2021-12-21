@@ -1,13 +1,15 @@
-#serverConfigIP=72.21.27.70
-serverConfigIP=104.248.20.228
-serverConfigPort=12341
+serverConfigIP=72.21.27.88
+#serverConfigIP=104.248.20.228
+#serverConfigIP=199.247.18.133
+#serverConfigIP=136.244.89.217
+serverConfigPort=17500
 #serverConfigPort=12342
 #serverConfigPort=12343
 protocolType=0
 protocolNumber=1038
 fixedClientIP=104.248.20.228
 fixedClientPort=2157
-dataLen=100
+dataLen=32
 delay=200
 socketType=-1
 numberOfPacketsPerSocket=10
@@ -16,4 +18,5 @@ maximumPortRange=2000
 rtpHeader=056412c452c384829b6cc3c401010200011c1e010001014c69
 multiUser=0
 numberOfUser=10
+
 

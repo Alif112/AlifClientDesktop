@@ -3,17 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clientbase;
+package clientbase.util;
 
-import clientbase.tcp.BGPImplementation;
-import clientbase.tcp.BasicTcpImplementation;
-import clientbase.tcp.COPSImplementation;
-import clientbase.tcp.CQLImplementation;
-import clientbase.tcp.EXECImplementation;
-import clientbase.tcp.IMAPImplementation;
-import clientbase.tcp.IPAImplementation;
-import clientbase.tcp.NineP2000Implementation;
-import clientbase.tcp.SMTPImplementation;
+import clientbase.tcp.*;
 import clientbase.udp.AutoRPImplementation;
 import clientbase.udp.BFDImplementation;
 import clientbase.udp.BVLCImplementation;
@@ -27,13 +19,12 @@ import clientbase.udp.DSPv2Implementation;
 import clientbase.udp.DropboxImplementation;
 import clientbase.udp.EDonkeyImplementation;
 import clientbase.udp.ICMPv6Implementation;
-import clientbase.udp.IPv4withGPRSImplementation;
+import clientbase.udp.IPv4WithGPRSImplementation;
 import clientbase.udp.IPv6Implementation;
 import clientbase.udp.ISAKMPImplementation;
 import clientbase.udp.L2TPImplementation;
 import clientbase.udp.LTPSegmentImplementation;
 import clientbase.udp.LoWPANImplementation;
-import clientbase.udp.MACTelnetImplementation;
 import clientbase.udp.MIOPImplementation;
 import clientbase.udp.MMSEImplementation;
 import clientbase.udp.MOUNTImplementation;
@@ -78,7 +69,10 @@ public class Constants {
     public static String loadConfigFromServer="loadConfigFromServer";
     public static String serverConfigIP="serverConfigIP";
     public static String serverConfigPort="serverConfigPort";
-    
+    public static String domain="domain";
+    public static String dnsIP="dnsIP";
+    public static String dnsPort="dnsPort";
+
     
     public static String[] protocolNameListUDP={"UDP 100","UFTP","CIGI","NFS","NTP","SNMP",
                                             "CLDAP","L2TP","BFD","WSP","MOUNT",
@@ -89,10 +83,7 @@ public class Constants {
                                             "RDT", "MACTelnet","DCP-PFT","WireGuard", "DNP",
                                             "TCPWithGPRS","SNDCP","IPv4WithGPRS"
                                               };
-    
-    
-    
-    
+
     public static UFTPImplementation uftp=new UFTPImplementation();
     public static CIGIImplementation cigi=new CIGIImplementation();
     public static NFSImplementation nfs=new NFSImplementation();
@@ -131,8 +122,8 @@ public class Constants {
     public static DNPImplementation dnp=new DNPImplementation();
     public static TCPWithGPRSImplementation tcpWithGprs=new TCPWithGPRSImplementation();
     public static SNDCPImplementation sndcp=new SNDCPImplementation();
-    public static IPv4withGPRSImplementation ipv4WithGprs=new IPv4withGPRSImplementation();
-    
+    public static IPv4WithGPRSImplementation ipv4WithGprs=new IPv4WithGPRSImplementation();
+
     
     public static final int UDP100=1000;
     public static final int UFTP=1001;
@@ -173,9 +164,10 @@ public class Constants {
     public static final int TCP_WITH_GPRS=1036;
     public static final int SNDCP=1037;
     public static final int IPv4_WITH_GPRS=1038;
+
     
     public static String[] protocolNameListTCP={"TCP 100","NineP2000","COPS","EXEC","BasicTcp","IMAP",
-                                            "SMTP","IPA","CQL","BGP"
+                                            "SMTP","IPA","CQL","BGP","SDNS"
                                               };
     
     public static NineP2000Implementation nineP2000=new NineP2000Implementation(false); //201
@@ -187,7 +179,7 @@ public class Constants {
     public static IPAImplementation ipa=new IPAImplementation();
     public static CQLImplementation cql=new CQLImplementation();
     public static BGPImplementation bgp=new BGPImplementation();
-    
+    public static DNSImplementation sdns=new DNSImplementation();
     
     public static final int NINEP2000=2001;
     public static final int COPS=2002;
@@ -198,5 +190,5 @@ public class Constants {
     public static final int IPA=2007;
     public static final int CQL=2008;
     public static final int BGP=2009;
-    
+    public static final int SDNS_SSL=2010;
 }

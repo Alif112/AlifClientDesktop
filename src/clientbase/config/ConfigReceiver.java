@@ -1,5 +1,6 @@
-package clientbase;
+package clientbase.config;
 
+import clientbase.util.Constants;
 import clientbase.util.Utility;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +25,7 @@ public class ConfigReceiver {
     
     
     public static void receiveConfig(String ip, int port) throws IOException{
+        System.out.println("serverConfigIP:port= "+ip+":"+port);
         byte[] data=new byte[2048];
         socket=new Socket(ip,port); 
         InputStream is=socket.getInputStream();

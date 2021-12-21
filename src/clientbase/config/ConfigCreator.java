@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clientbase;
+package clientbase.config;
 
 
+import clientbase.util.Constants;
 import clientbase.util.Utility;
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,6 +18,7 @@ import java.util.HashMap;
  * @author alif
  */
 public class ConfigCreator {
+    public static final int HUGE_NUMBER = 999999;
     public static HashMap configuration=new HashMap<String,String> ();
     public static int protocolNumber;
     public static int protocolType;
@@ -35,11 +37,12 @@ public class ConfigCreator {
     public static int maximumPortRange;
     public static String serverConfigIP;
     public static int serverConfigPort;
-    
-    
-    
-    
-    
+    public static String domain;
+    public static String dnsIp;
+    public static int dnsPort;
+    public static int enableSocialBypass;
+
+
     public static boolean readConfiguration(){
         File file = new File(Constants.filename);
         if(!file.exists())return false;
@@ -66,7 +69,7 @@ public class ConfigCreator {
         });
     }
     
-        public static void loadConfig(HashMap<String, String> config) {
+    public static void loadConfig(HashMap<String, String> config) {
         String str=config.get(Constants.protocolNumber.toLowerCase());
         if(str!=null) protocolNumber=Integer.parseInt(str.trim());
         str = config.get(Constants.protocolType.toLowerCase());
@@ -109,7 +112,17 @@ public class ConfigCreator {
         
         str=config.get(Constants.serverConfigPort.toLowerCase());
         if(str!=null) serverConfigPort=Integer.parseInt(str.trim());
-        
+
+        str=config.get(Constants.domain.toLowerCase());
+        if(str!=null) domain=str.trim();
+
+        str=config.get(Constants.dnsIP.toLowerCase());
+        if(str!=null) dnsIp=str.trim();
+        str=config.get(Constants.dnsPort.toLowerCase());
+        if(str!=null) dnsPort=Integer.parseInt(str.trim());
+
+
+
     }
 
 
@@ -130,6 +143,9 @@ public class ConfigCreator {
         System.out.println("Number of User = "+numberOfUser);
         System.out.println("minimum port range = "+minimumPortRange);
         System.out.println("maximum port range = "+maximumPortRange);
+        System.out.println("domain = "+domain);
+        System.out.println("dnsIp = "+dnsIp);
+        System.out.println("dnsPort = "+dnsPort);
         System.out.println("-------------------------------------------------------\n\n");
     }
     

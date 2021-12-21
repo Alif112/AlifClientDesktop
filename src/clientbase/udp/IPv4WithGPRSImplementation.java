@@ -12,7 +12,7 @@ import clientbase.util.Utility;
  *
  * @author alif
  */
-public class IPv4withGPRSImplementation {
+public class IPv4WithGPRSImplementation {
     
     private static final byte[] tlliID2={0x4a,0x6a,0x25,0x42,0x43,0x48};
     private static final byte[] qos={0x31,0x34};
@@ -28,7 +28,7 @@ public class IPv4withGPRSImplementation {
     private byte[] destData;
     
     
-    public IPv4withGPRSImplementation(){
+    public IPv4WithGPRSImplementation(){
         locAreaCode=(short) Utility.random.nextInt();
         unAcknowledgedMode=(short) Utility.random.nextInt();
         ipv4Identification=(short) Utility.random.nextInt();

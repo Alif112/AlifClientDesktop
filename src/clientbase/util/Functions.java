@@ -155,6 +155,33 @@ public class Functions {
         }
         return crl;
     }
+    public static int readByte(InputStream is, int headerLen, byte[] data, int offset) throws Exception {
+
+        int minLen = headerLen + 2, totalRead = 0, readLen;
+        while (minLen > 0) {
+
+            readLen = is.read(data, offset + totalRead, minLen);
+            if (readLen < 0) {
+                throw new Exception("Socket Closed:");
+            }
+            totalRead += readLen;
+            minLen -= readLen;
+        }
+        minLen = data[offset + headerLen] & 0xff;
+        minLen = (minLen << 8) | (data[offset + headerLen + 1] & 0xff);
+        totalRead = 0;
+        while (minLen > 0) {
+            readLen = is.read(data, offset + totalRead, minLen);
+            if (readLen < 0) // socket close case
+            {
+                throw new Exception("Socket Closed:");
+            }
+            totalRead += readLen;
+            minLen -= readLen;
+
+        }
+        return totalRead;
+    }
     public static int readByte(InputStream is,byte [] data,int offset,int length) throws Exception{
         int rl, crl;
         length = length + offset;

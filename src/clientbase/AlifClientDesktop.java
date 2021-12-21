@@ -1,10 +1,11 @@
 package clientbase;
 
 
+import clientbase.config.ConfigCreator;
+import clientbase.config.ConfigReceiver;
+import clientbase.util.Constants;
 import clientbase.util.Utility;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -33,7 +34,7 @@ public class AlifClientDesktop {
         int i=0;
         System.out.println("Udp Client Started...........");
         
-        boolean isread=ConfigCreator.readConfiguration();
+        boolean isread= ConfigCreator.readConfiguration();
         ConfigCreator.showConfig(ConfigCreator.configuration);
         if(isread) ConfigCreator.loadConfig(ConfigCreator.configuration);
         ConfigCreator.showConfigAfter();

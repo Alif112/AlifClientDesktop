@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AlifClientDesktop">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/AlifClientDesktop.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
